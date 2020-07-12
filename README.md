@@ -31,7 +31,7 @@ pip install -r requirements.txt
 - To download the dataset, it's required a Kaggle's API, which it's described here how to get one: https://github.com/Kaggle/kaggle-api. 
 Once it is done, the json file should be located in _intput/_ directory, named as "kaggle.json".
 
-Or 
+or 
 
 - It can be downloaded manually on Kaggle here: https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia and extracted to a folder named "xray_data/" in the project's repository.
 
