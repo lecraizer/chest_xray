@@ -1,31 +1,10 @@
-# ConvNet Implementation: An Object Oriented Approach using Keras API.
+# INF2102 - Programming Conclusion Project
 
-We aim to construct an object-oriented project template for working with Convolution Neural Networks (ConvNet) through Keras API. This template provides basic structures that helps to simplify the development process for new projects that aims to construct ConvNet models.
+**2020.1**
 
-# Table Of Contents
+Discipline of the postgraduate program (M.Sc.) at the Department of Informatics of PUC-Rio.
 
-- [About](#about): Project details.
-- [Installation](#installation-and-execution): Project setup guide.
-- [Architecture](#architecture): Architecture description.
-    - [Project Structure](##project-structure): File arrangments in different folders.
-    - [Architectural Modules](##architectural-modules): Description of the modules.
-- [Implementation Example](#implementation-example): Example implementation using the template.
-- [Implementation Guidelines](#implementation-guidelines): Guidelines to follow for specific Keras project implementation.
-- [Further Reading](#further-reading): References for future reading.
-- [FAQs](#Frequently-Asked-Questions): Most frequently asked questions. 
-- [Future Works](#Future-Works): Activities in progress.
-- [Acknowledgments](#acknowledgments): Acknowledgments.
-- [Contributors](#contributors): Project contributors.
-
-# About
-
-Repository containing a deep learning supervised approach to a x-ray classification model
-
-This project aims to construct an *Object-oriented* python code to implement Convolution Neural Networks (ConvNet) using Keras API.
-
-A *ConvNet* consists of an input and an output layer, as well as multiple hidden layers. These layers of a ConvNet typically consist of convolutional, pooling, batch normalization, fully connected and normalization layers. 
-
-We provide a simple keras project template that incorporates fundamentals of object-oriented programming to simplify the development process. Using this template one can easily start a ConvNet implementation without having to worry much about the helper classes and concentrate only on the construction, training and testing phases of the deep learning model.
+## X-ray pneumonia imaging using Deep Learning
 
 # Installation and Execution
 
@@ -69,24 +48,13 @@ pip install -r requirements.txt
 ├── preprocessing                           - Package for preconfiguration of main module.
 │   └── preconfiguration.py                 - Preconfigures Tensowflow-GPU and downloads data if needed.
 |
+├── previsualization                        - Package for previsualizing x-ray data.
+│   └── preplotter.py                       - Plots data before model training.
+|
 ├── utils                                   - Package for utilities.
 |   ├── plotter.py                          - Module for plotting visual utilities and results.
 ```
 
-## Architectural Modules
+#### Report
 
-- ### **Data Loader**
-
-	- The "data_loader" package loads the experiment specific dataset from the Keras library or from a specified path.
-	- Each dataset should have a separate module implementation.
-
-- ### **Model**
-
-	- It implements the ConvNet architecture as per the requirements of the experiment.
-	- This package holds one specific module for each experiment that designs the model's architecture.
-
-- ### **Mains**
-	- The main package wraps the execution flow of the experiment.
-	- Depending on the requirement it calls the specific member methods from different modules to perform a specific operation.
-	- It's class diagram is illustrated in the following figure: </br>
-	![Mains](./resources/class_diagram.png)
+* [INF2102-PFP-LuisEduardoCraizer.pdf](https://github.com/lecraizer/chest_xray/blob/master/docs/INF2102-PFP-LuisEduardoCraizer.pdf)
