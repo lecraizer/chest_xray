@@ -1,4 +1,5 @@
-from preprocessing.preconfiguration import PreProcessor
+from pre_processing.preconfiguration import PreProcessor
+from pre_visualization.preplotter import PreVisualizer
 from model.TL_model import TransferLearningModel
 from model.conv_model import ConvolutionalModel
 from data_loader.xray_loader import DataLoader
@@ -21,20 +22,20 @@ def main():
     
     
     # Visualize images and quantities.
-    V = Visualizer()
-    V.image_visualizer(n = 5)
-    V.plot_countplot(y_train) # visualize countplot and save to file
+    PreV = PreVisualizer()
+    PreV.image_visualizer(n = 5)
+    PreV.plot_countplot(y_train) # visualize countplot and save to file
 
     
     # Construct, compile and train model.
 #     M = ConvolutionalModel()
     M = TransferLearningModel()
     history = M.train_model(X_train, y_train, (X_val, y_val))
-    
+    pred, y_true = M.evaluate_model(X_test, y_test)
     
     # Evaluate results acquired after model fitting.
+    V = Visualizer()
     V.history_results(history) # plot results into a 2d history plot 
-    pred, y_true = M.evaluate_model(X_test, y_test)
     V.plot_confusion_matrix(y_true, pred) # plot a confusion matrix and save it into a file
 
 
