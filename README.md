@@ -4,11 +4,10 @@
 
 Discipline of the postgraduate program (M.Sc.) at the Department of Informatics of PUC-Rio.
 
-## X-ray pneumonia imaging using Deep Learning
 
 # Installation and Execution
 
-## Installing in Anaconda environment
+### Installing in Anaconda environment
 
 We can use Anaconda to set an environment.
 
@@ -19,7 +18,7 @@ conda install tensorflow-gpu==2.1.0
 ```
 
 
-## Install the dependencies of the project through the command
+### Install the dependencies of the project through the command
 
 Then, locate the project's root directory and use pip to install the requirements (`requirements.txt`).
 
@@ -27,7 +26,16 @@ Then, locate the project's root directory and use pip to install the requirement
 pip install -r requirements.txt
 ```
 
-## Project Structure
+### Downloading x-ray data
+
+- To download the dataset, it's required a Kaggle's API, which it's described here how to get one: https://github.com/Kaggle/kaggle-api. 
+Once it is done, the json file should be located in _intput/_ directory, named as "kaggle.json".
+
+Or 
+
+- It can be downloaded manually on Kaggle here: https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia and extracted to a folder named "xray_data/" in the project's repository.
+
+### Project Structure
 
 ```
 ├── requirements                            - Specifies the library dependencies.
@@ -55,6 +63,6 @@ pip install -r requirements.txt
 |   ├── plotter.py                          - Module for plotting visual utilities and results.
 ```
 
-#### Report
+### Report
 
 * [INF2102-PFP-LuisEduardoCraizer.pdf](https://github.com/lecraizer/chest_xray/blob/master/docs/INF2102-PFP-LuisEduardoCraizer.pdf)
