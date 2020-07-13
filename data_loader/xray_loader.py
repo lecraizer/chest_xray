@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+This class loads the dataset from the xray_data folder and process to train, val, test sets.
+    Created on Mon Jun 1 2020
+@author: Luis Eduardo Craizer
+@version: 1.0
+"""
+
 from sklearn.model_selection import train_test_split
 from keras.utils.np_utils import to_categorical
 from skimage.transform import resize
@@ -24,23 +32,15 @@ class DataLoader():
         X = []
         y = []
 
-        k = 0
         for nextDir in os.listdir(DIR):
             if not nextDir.startswith('.'):
                 if nextDir in ['NORMAL']:
                     label = 0
                 elif nextDir in ['PNEUMONIA']:
                     label = 1
-#                 else:
-#                     label = 2
 
                 temp = DIR + nextDir
                 for file in tqdm(os.listdir(temp)):
-
-                    k += 1
-                    if k > 20:
-                        break
-
                     img = cv2.imread(temp + '/' + file)
                     if img is not None:
                         img = resize(img, (150, 150, 3)) # resize image to standard shape

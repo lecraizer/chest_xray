@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+ConvNet model for chest x-ray dataset.
+    Created on Mon Jun 8 2020
+@author: Luis Eduardo Craizer
+@version: 1.0
+"""
+
 from keras.layers import Activation, BatchNormalization, Conv2D, Dense, Dropout, Flatten, MaxPooling2D
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau 
 from keras.optimizers import RMSprop

@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Execution flow for the chest x-ray project.
+    Created on Wed Jun 3 2020
+@author: Luis Eduardo Craizer
+@version: 1.0
+"""
+
 from pre_processing.preconfiguration import PreProcessor
 from pre_visualization.preplotter import PreVisualizer
 from model.TL_model import TransferLearningModel
@@ -28,8 +36,8 @@ def main():
 
     
     # Construct, compile and train model.
-#     M = ConvolutionalModel()
-    M = TransferLearningModel()
+    M = ConvolutionalModel()
+#     M = TransferLearningModel()
     history = M.train_model(X_train, y_train, (X_val, y_val))
     pred, y_true = M.evaluate_model(X_test, y_test)
     

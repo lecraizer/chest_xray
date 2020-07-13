@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Preconfigures the environment for the project to run.
+    Created on Wed Jun 3 2020
+@author: Luis Eduardo Craizer
+@version: 1.0
+"""
+
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import tensorflow as tf

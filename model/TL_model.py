@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+ConvNet model for chest x-ray dataset using InceptionV3's pre-trained model.
+    Created on Mon Jun 8 2020
+@author: Luis Eduardo Craizer
+@version: 1.0
+"""
+
 from keras.layers import BatchNormalization, Dense, Dropout , GlobalAveragePooling2D
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau 
 from keras.applications.inception_v3 import InceptionV3
@@ -5,8 +13,6 @@ from keras.optimizers import Adam
 from keras.models import Model
 import numpy as np
 import time
-
-from sklearn.metrics import classification_report
 
 
 class TransferLearningModel():
@@ -18,7 +24,7 @@ class TransferLearningModel():
         self.HEIGHT = 150
         self.WIDTH = 150
         self.DEPTH = 3
-        self.LOSS_FUNC = 'binary_crossentropy'
+        self.LOSS_FUNC = 'categorical_crossentropy'
         self.BS = 64
         self.EPOCHS = 10
         self.OPT_FUNC = 'adam'
@@ -33,7 +39,7 @@ class TransferLearningModel():
         Load inception model and its weights.
         """
         self.base_model = InceptionV3(weights=None, include_top=False , input_shape=(self.HEIGHT, self.WIDTH, self.DEPTH))
-        self.base_model.load_weights("input/inception_v3_weights.h5")
+#         self.base_model.load_weights("input/inception_v3_weights.h5")
     
     def create_model(self):
         """
@@ -78,11 +84,6 @@ class TransferLearningModel():
         pred = self.model.predict(X_test)
         pred = np.argmax(pred,axis = 1) 
         y_true = np.argmax(y_test,axis = 1)
-        
-#         f1_score(y_test, pred, average='weighted')
-        print ('\n*Classification Report:\n', classification_report(y_test, pred))
-#         confusion_matrix_graph = confusion_matrix(y_test, predictions)
-        
         return pred, y_true
     
     

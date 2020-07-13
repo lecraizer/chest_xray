@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Generates plots containing results of the experiment.
+    Created on Wed Jun 10 2020
+@author: Luis Eduardo Craizer
+@version: 1.0
+"""
+
 import matplotlib 
 matplotlib.use('Agg') 
 from mlxtend.plotting import plot_confusion_matrix
@@ -16,10 +24,7 @@ class Visualizer():
         """
         Initialize the directories.
         """
-        self.DIR = "xray_data/chest_xray/train/"
-        self.PNEU_DIR = os.listdir(self.DIR + "PNEUMONIA")
-        self.REG_DIR = os.listdir(self.DIR + "NORMAL")
-
+        self.OUTPUT_DIR = "output/"
             
     def history_results(self, hist):
         """
@@ -41,7 +46,7 @@ class Visualizer():
         plt.ylabel('loss')
         plt.xlabel('epoch')
         plt.legend(['train', 'test'], loc='upper left')
-        plt.savefig('output/history_results.png')
+        plt.savefig(self.OUTPUT_DIR + 'history_results.png')
         
         
     def plot_confusion_matrix(self, y_true, pred):
@@ -51,6 +56,6 @@ class Visualizer():
         plt.clf() # erase plot
         conf_matrix = confusion_matrix(y_true, pred)
         fig, ax = plot_confusion_matrix(conf_mat=conf_matrix ,  figsize=(5, 5))
-        fig.savefig('output/confusion_matrix.png')
+        fig.savefig(self.OUTPUT_DIR + 'confusion_matrix.png')
         
         

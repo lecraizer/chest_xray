@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+"""
+Provides pre-training data visualization to better knowledge.
+    Created on Thu Jun 11 2020
+@author: Luis Eduardo Craizer
+@version: 1.0
+"""
+
 import matplotlib 
 matplotlib.use('Agg') 
 from mlxtend.plotting import plot_confusion_matrix

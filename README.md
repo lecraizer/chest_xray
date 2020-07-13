@@ -2,7 +2,7 @@
 
 **2020.1**
 
-Discipline of the postgraduate program (M.Sc.) at the Department of Informatics of PUC-Rio.
+Discipline of the postgraduate program at the Department of Informatics of PUC-Rio.
 
 
 # Installation and Execution
